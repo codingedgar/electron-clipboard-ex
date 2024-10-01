@@ -1,12 +1,21 @@
 {
-  "name": "electron-clipboard-ex",
-  "version": "1.3.3",
+  "name": "@codingedgar/electron-clipboard-ex",
+  "version": "1.3.4",
   "description": "Extended electron.js clipboard module.",
-  "main": "index.js",
-  "os": [
-    "darwin",
-    "win32"
+  "keywords": [
+    "electron",
+    "clipboard",
+    "finder",
+    "explorer"
   ],
+  "homepage": "https://github.com/kenan2002/electron-clipboard-ex",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codingedgar/electron-clipboard-ex.git"
+  },
+  "license": "MIT",
+  "author": "kenan2002",
+  "main": "index.js",
   "types": "index.d.ts",
   "files": [
     "src",
@@ -15,28 +24,26 @@
     "index.d.ts",
     "prebuilds"
   ],
-  "homepage": "https://github.com/kenan2002/electron-clipboard-ex",
-  "keywords": [
-    "electron",
-    "clipboard",
-    "finder",
-    "explorer"
-  ],
-  "author": "kenan2002",
-  "license": "MIT",
+  "scripts": {
+    "install": "node-gyp-build",
+    "prebuildify": "node build.js",
+    "test": "jest"
+  },
   "dependencies": {
-    "node-addon-api": "^4.0.0",
+    "node-addon-api": "8.2.0",
     "node-gyp-build": "^4.2.3"
   },
-  "gypfile": true,
   "devDependencies": {
     "fs-extra": "^10.0.0",
     "jest": "^27.0.6",
-    "prebuildify": "^4.2.0"
+    "prebuildify": "6.0.1"
   },
-  "scripts": {
-    "test": "jest",
-    "install": "node-gyp-build",
-    "prebuildify": "node build.js"
-  }
+  "os": [
+    "darwin",
+    "win32"
+  ],
+  "publishConfig": {
+    "@codingedgar:registry": "https://npm.pkg.github.com"
+  },
+  "gypfile": true
 }

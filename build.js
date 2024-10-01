@@ -1,11 +1,13 @@
-const {promisify} = require('util');
+const {
+  promisify
+} = require('util');
 const prebuildify = promisify(require('prebuildify'));
 
 const platform = process.platform;
 
 const getSupportedArchs = () => {
   if (platform === 'darwin') {
-    return ['x64', 'arm64'];
+    return ['x64', 'arm64', 'x64+arm64'];
   }
 
   if (platform === 'win32') {
@@ -21,6 +23,7 @@ async function build() {
       platform,
       arch,
       napi: true,
+      name: "node.napi",
     });
   }
 }
